@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
+use App\Mail\PenawaranBaru;
 use App\Models\Contact;
 use App\Models\Product;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -17,10 +19,14 @@ class ContactController extends Controller
 
     public function store(ContactRequest $request)
     {
-        Contact::create($request->validated());
+        $contact = Contact::create($request->validated());
 
-        return redirect()
-            ->to(url()->previous() . '#minta-penawaran')
-            ->with('success', 'Terima kasih! Permintaan penawaran Anda sudah kami terima. Tim kami akan segera menghubungi Anda.');
+        try {
+            Mail::to(config('company.email'))->send(new PenawaranBaru($contact));
+        } catch (\Throwable $e) {
+            report($e);
+        }
+
+        return back()->with('success', 'Permintaan penawaran terkirim. Tim kami akan segera menghubungi Anda.');
     }
 }

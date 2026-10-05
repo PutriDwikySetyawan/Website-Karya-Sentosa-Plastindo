@@ -12,6 +12,7 @@
         </div>
     @endif
 
+
     <form action="{{ route('contact.store') }}" method="POST" novalidate>
         @csrf
         <div class="row g-3">

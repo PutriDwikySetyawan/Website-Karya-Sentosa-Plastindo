@@ -81,7 +81,9 @@ a{color:var(--navy)}
 .value-card{background:#fff;border:1px solid #e3e8ee;padding:1.4rem}
 .value-card i{color:var(--orange);font-size:1.2rem}
 .value-card h6{font-size:.85rem;color:var(--navy);margin:.6rem 0 .4rem}
-.value-card p{font-size:.78rem;color:var(--muted);margin:0}
+.value-card p,
+.value-card .misi-list li{font-size:.78rem;color:var(--muted)}
+.value-card p{margin:0}
 
 /* Use chips */
 .use-chip{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.05);padding:.9rem 1rem;font-weight:700;font-size:.8rem}
@@ -135,3 +137,30 @@ a{color:var(--navy)}
 .hero-photo{position:relative;overflow:hidden;background:#1b3a63}
 /* Video mengisi kotak penuh, tinggi dibatasi supaya tidak terlalu besar */
 .hero-video{width:100%;height:100%;min-height:360px;max-height:480px;object-fit:cover;display:block;background:#1b3a63}
+
+/* Daftar misi: bullet oranye, jarak rapi, ukuran teks ikut gaya paragraf kartu */
+.misi-list{margin:.5rem 0 0;padding-left:1.1rem}
+.misi-list li{margin-bottom:.35rem;padding-left:.15rem;line-height:1.6}
+.misi-list li:last-child{margin-bottom:0}
+.misi-list li::marker{color:var(--orange)}
+
+/* Foto contoh penggunaan: tinggi mengikuti kolom kiri, gambar dipotong rapi */
+.use-photo{width:100%;min-height:280px;object-fit:cover;object-position:center;display:block}
+
+/* Kartu tim: direktur di atas, divisi dalam grid */
+.team-lead{max-width:300px;background:var(--navy);color:#fff;text-align:center;padding:1.4rem 1rem;border-bottom:3px solid var(--orange)}
+.team-lead i{display:block;color:var(--orange);font-size:1.5rem;margin-bottom:.4rem}
+.team-lead strong{display:block;font-family:'Archivo Black','Work Sans',sans-serif;font-weight:400;font-size:.9rem;text-transform:uppercase}
+.team-lead span{display:block;font-size:.82rem;color:#d5deea;margin-top:.2rem}
+
+.team-card{background:#fff;border:1px solid #e3e8ee;border-top:3px solid var(--orange);text-align:center;padding:1.2rem .8rem;transition:transform .25s,box-shadow .25s}
+.team-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(10,35,66,.08)}
+.team-card i{display:block;color:var(--orange);font-size:1.3rem;margin-bottom:.4rem}
+.team-card strong{display:block;font-family:'Archivo Black','Work Sans',sans-serif;font-weight:400;font-size:.78rem;color:var(--navy);text-transform:uppercase;margin-bottom:.3rem}
+.team-card span{display:block;font-size:.78rem;color:var(--muted)}
+
+/* Daftar bagian di dalam kartu Gudang */
+.team-sub{list-style:none;margin:0;padding:0;font-size:.78rem;color:var(--muted)}
+.team-sub li{padding:.25rem 0}
+.team-sub li+li{border-top:1px dashed #dfe5ec}
+.team-sub small{display:block;font-weight:700;color:var(--navy);font-size:.7rem}

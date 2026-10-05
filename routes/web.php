@@ -14,3 +14,7 @@ Route::get('/products/{slug}', [ProductController::class, 'show'])->name('produc
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+Route::get('/tes-email', function () {
+    return new App\Mail\PenawaranBaru(App\Models\Contact::latest()->firstOrFail());
+});

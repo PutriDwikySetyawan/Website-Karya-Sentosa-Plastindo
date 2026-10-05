@@ -32,7 +32,7 @@
 {{-- CONTOH PENGGUNAAN --}}
 <section class="section section-navy">
     <div class="container">
-        <div class="row gy-4 align-items-center">
+        <div class="row gy-4 align-items-stretch">
             <div class="col-lg-6">
                 <x-section-title :light="true" eyebrow="Contoh Penggunaan"
                     title="Untuk berbagai kebutuhan industri"
@@ -43,10 +43,11 @@
                     @endforeach
                 </div>
             </div>
-            <div class="col-lg-6">
-                <img src="{{ asset('assets/images/gallery/gallery-1.jpg') }}" alt="Gudang industri" class="img-fluid w-100 photo-fill"
-                     onerror="this.style.minHeight='320px';this.style.background='#1b3a63'">
-            </div>
+          <div class="col-lg-6 d-flex">
+    {{-- Foto meregang setinggi kolom kiri, sisi berlebih dipotong rapi --}}
+    <img src="{{ asset('assets/images/gallery/gallery-1.jpg') }}" alt="Gudang industri" class="use-photo"
+         onerror="this.style.minHeight='320px';this.style.background='#1b3a63'">
+</div>
         </div>
     </div>
 </section>

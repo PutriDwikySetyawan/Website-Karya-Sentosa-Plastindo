@@ -32,11 +32,18 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        foreach ([1, 2, 3] as $i) {
-            Gallery::updateOrCreate(['image' => "gallery-$i.jpg"], [
-                'title'   => "Dokumentasi $i",
-                'caption' => 'Ganti dengan keterangan foto',
-            ]);
-        }
+       // Judul dan keterangan galeri, kuncinya nama file foto
+$galeri = [
+    1 => ['Proses Produksi',       'Operator memantau pengaturan mesin cetak plastik untuk menjaga mutu produksi.'],
+    2 => ['Produksi Drum Plastik', 'Pemeriksaan drum plastik hasil produksi sebelum masuk tahap pengemasan.'],
+    3 => ['Gudang Penyimpanan',    'Jerigen plastik disusun rapi di gudang, siap dikirim ke pelanggan.'],
+];
+
+foreach ($galeri as $i => [$judul, $keterangan]) {
+    Gallery::updateOrCreate(['image' => "gallery-$i.jpg"], [
+        'title'   => $judul,
+        'caption' => $keterangan,
+    ]);
+}
     }
 }
