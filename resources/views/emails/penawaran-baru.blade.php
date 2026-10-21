@@ -10,15 +10,17 @@
         'message'  => 'Pesan / Kebutuhan',
     ];
 
-    $sembunyikan = ['id', 'created_at', 'updated_at'];
-
     // Deteksi: email atau nomor telepon
     $kontak  = trim((string) ($contact->contact ?? ''));
     $isEmail = filter_var($kontak, FILTER_VALIDATE_EMAIL) !== false;
 
     $nomor = $isEmail ? '' : preg_replace('/\D/', '', $kontak);
-    if (str_starts_with($nomor, '0')) {
-        $nomor = '62' . substr($nomor, 1);
+    if ($nomor !== '') {
+        if (str_starts_with($nomor, '0')) {
+            $nomor = '62' . substr($nomor, 1);
+        } elseif (str_starts_with($nomor, '8')) {
+            $nomor = '62' . $nomor;
+        }
     }
 @endphp
 
@@ -38,14 +40,14 @@
 
             {{-- Isi form --}}
             <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:14px">
-                @foreach($contact->getAttributes() as $kolom => $isi)
-                    @continue(in_array($kolom, $sembunyikan) || $isi === null || $isi === '')
+                @foreach($label as $kolom => $nama)
+                    @continue(blank($contact->{$kolom}))
                     <tr>
                         <td style="padding:10px 12px;border:1px solid #e3e8ee;background:#f4f6f8;width:35%;vertical-align:top;color:#0a2342;font-weight:bold">
-                            {{ $label[$kolom] ?? ucfirst(str_replace('_', ' ', $kolom)) }}
+                            {{ $nama }}
                         </td>
                         <td style="padding:10px 12px;border:1px solid #e3e8ee;vertical-align:top;color:#1c2733">
-                            {!! nl2br(e($isi)) !!}
+                            {!! nl2br(e($contact->{$kolom})) !!}
                         </td>
                     </tr>
                 @endforeach
@@ -53,8 +55,8 @@
 
             {{-- Tombol balas --}}
             <p style="margin:24px 0 8px">
-                @if(!empty($contact->email))
-                    <a href="mailto:{{ $contact->email }}"
+                @if($isEmail)
+                    <a href="mailto:{{ $kontak }}?subject={{ rawurlencode('Re: Permintaan Penawaran') }}"
                        style="display:inline-block;background:#0a2342;color:#ffffff;text-decoration:none;padding:10px 18px;font-size:13px;font-weight:bold;margin-right:8px">
                         Balas via Email
                     </a>
@@ -73,7 +75,7 @@
         </div>
 
         <div style="background:#f4f6f8;padding:12px 24px;font-size:11px;color:#5d6b7a">
-            Email ini dikirim otomatis dari form website. Kamu juga bisa menekan Reply untuk membalas langsung ke pengunjung.
+            Email ini dikirim otomatis dari form website. Anda juga bisa menekan Reply untuk membalas langsung ke pengunjung.
         </div>
     </div>
 </div>

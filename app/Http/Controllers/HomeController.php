@@ -8,7 +8,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $products = Product::orderBy('id')->take(4)->get();
+        $products = Product::orderBy('id')->get();
 
         return view('home.index', compact('products'));
     }

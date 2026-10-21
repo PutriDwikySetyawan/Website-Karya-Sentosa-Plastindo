@@ -2,13 +2,23 @@
 @section('title', $product->name . ' | ' . config('company.name'))
 
 @section('content')
+@php
+    $fotoAda = $product->image && file_exists(public_path('assets/images/products/' . $product->image));
+@endphp
+
 <section class="section">
     <div class="container">
         <a href="{{ route('products.index') }}" class="small text-decoration-none">&larr; Kembali ke produk</a>
         <div class="row gy-4 mt-1">
             <div class="col-lg-6">
-                <img src="{{ asset('assets/images/products/' . $product->image) }}" alt="{{ $product->name }}" class="img-fluid w-100"
-                     onerror="this.style.minHeight='320px';this.style.background='#1b3a63'">
+                @if($fotoAda)
+                    <img src="{{ asset('assets/images/products/' . $product->image) }}" alt="{{ $product->name }}" class="img-fluid w-100">
+                @else
+                    <div class="product-noimg" style="aspect-ratio:4/3">
+                        <span>{{ $product->name }}</span>
+                        <small>Foto segera hadir</small>
+                    </div>
+                @endif
             </div>
             <div class="col-lg-6">
                 <span class="eyebrow">{{ $product->label }}</span>

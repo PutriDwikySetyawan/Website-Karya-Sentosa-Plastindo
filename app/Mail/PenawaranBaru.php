@@ -13,16 +13,16 @@ class PenawaranBaru extends Mailable
     public function __construct(public Contact $contact) {}
 
     public function envelope(): Envelope
-{
-    $kontak = trim((string) $this->contact->contact);
+    {
+        $kontak = trim((string) $this->contact->contact);
 
-    return new Envelope(
-        subject: 'Permintaan Penawaran Baru dari ' . ($this->contact->name ?? 'Pengunjung'),
-        replyTo: filter_var($kontak, FILTER_VALIDATE_EMAIL)
-            ? [new Address($kontak, $this->contact->name ?? '')]
-            : [],
-    );
-}
+        return new Envelope(
+            subject: 'Permintaan Penawaran Baru dari ' . ($this->contact->name ?? 'Pengunjung'),
+            replyTo: filter_var($kontak, FILTER_VALIDATE_EMAIL)
+                ? [new Address($kontak, $this->contact->name ?? '')]
+                : [],
+        );
+    }
 
     public function content(): Content
     {

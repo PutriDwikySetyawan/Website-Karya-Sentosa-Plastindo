@@ -1,7 +1,17 @@
+@php
+    $fotoAda = $product->image && file_exists(public_path('assets/images/products/' . $product->image));
+@endphp
+
 <article class="product-card h-100">
     <a href="{{ route('products.show', $product->slug) }}" class="product-img">
-        <img src="{{ asset('assets/images/products/' . $product->image) }}" alt="{{ $product->name }}"
-             onerror="this.style.height='170px';this.style.background='#1b3a63'">
+        @if($fotoAda)
+            <img src="{{ asset('assets/images/products/' . $product->image) }}" alt="{{ $product->name }}">
+        @else
+            <div class="product-noimg">
+                <span>{{ $product->name }}</span>
+                <small>Foto segera hadir</small>
+            </div>
+        @endif
     </a>
     <div class="product-body">
         <span class="product-label">{{ $product->label }}</span>
