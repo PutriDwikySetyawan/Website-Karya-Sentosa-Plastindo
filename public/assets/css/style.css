@@ -65,10 +65,7 @@ a{color:var(--navy)}
 .filter-tabs .active{background:var(--navy);color:#fff;border-color:var(--navy)}
 
 /* Product card */
-.product-card{background:#fff;border:1px solid #e3e8ee;display:flex;flex-direction:column}
-.product-img{display:block;overflow:hidden;background:#f4f6f8}
-.product-img img{width:100%;height:220px;object-fit:contain;padding:12px;display:block;transition:transform .4s}
-.product-card:hover .product-img img{transform:scale(1.04)}
+.product-card{background:#fff;border:1px solid #e3e8ee;display:flex;flex-direction:column;overflow:hidden}
 .product-body{padding:1.2rem;display:flex;flex-direction:column;flex:1}
 .product-label{color:var(--orange);font-weight:700;font-size:.65rem;letter-spacing:.15em}
 .product-body h5{font-size:.95rem;color:var(--navy);margin:.3rem 0 .6rem}
@@ -77,14 +74,31 @@ a{color:var(--navy)}
 .product-link{font-size:.78rem;font-weight:700;color:var(--navy)}
 .product-link:hover{color:var(--orange)}
 
-/* Tambahan: foto full, tanpa ruang atas/bawah/kiri/kanan */
-.product-img{background:none;line-height:0}
+/* Foto kartu produk: seluruh foto tampil, tidak dipotong */
+:root{ --card-ratio:4/3; }     /* lebih tinggi: 1/1, lebih pendek: 16/10 */
+
+.product-img{display:block;overflow:hidden;background:#fff;line-height:0}
 .product-img img{
+  width:100%;
   height:auto;
-  aspect-ratio:4/5;       /* tinggi sedang, sama di semua card */
-  object-fit:cover;       /* foto memenuhi penuh sampai tepi */
-  padding:0;
+  aspect-ratio:var(--card-ratio);   /* sama di semua kartu */
+  object-fit:contain;               /* seluruh foto terlihat */
+  object-position:center;
+  padding:12px;
+  display:block;
+  transition:transform .4s;
 }
+.product-card:hover .product-img img{transform:scale(1.04)}
+
+/* Placeholder produk yang belum punya foto (ukuran sama dengan foto) */
+.product-noimg{
+  aspect-ratio:var(--card-ratio);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:1rem;line-height:1.4;
+  background:linear-gradient(160deg,#1b3a63,#0a2342);color:#fff;
+}
+.product-noimg span{font-family:'Archivo Black','Work Sans',sans-serif;font-size:.95rem}
+.product-noimg small{margin-top:.4rem;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#f47b20;font-weight:700}
 
 /* Value cards */
 .value-card{background:#fff;border:1px solid #e3e8ee;padding:1.4rem}
@@ -173,28 +187,3 @@ a{color:var(--navy)}
 .team-sub li{padding:.25rem 0}
 .team-sub li+li{border-top:1px dashed #dfe5ec}
 .team-sub small{display:block;font-weight:700;color:var(--navy);font-size:.7rem}
-
-/* ===== Kartu produk: foto full, tanpa ruang atas/bawah/kiri/kanan ===== */
-:root{ --card-ratio:2/3; }     /* ukuran sedang. Lebih tinggi: 4/5, lebih pendek: 5/4 */
-
-.product-card{overflow:hidden}
-.product-img{background:none;line-height:0}
-.product-img img{
-  width:100%;
-  height:auto;
-  aspect-ratio:var(--card-ratio);   /* sama di semua kartu */
-  object-fit:cover;                 /* foto penuh sampai tepi */
-  object-position:center 40%;
-  padding:0;
-  display:block;
-}
-
-/* Placeholder produk yang belum punya foto */
-.product-noimg{
-  aspect-ratio:var(--card-ratio);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:1rem;line-height:1.4;
-  background:linear-gradient(160deg,#1b3a63,#0a2342);color:#fff;
-}
-.product-noimg span{font-family:'Archivo Black','Work Sans',sans-serif;font-size:.95rem}
-.product-noimg small{margin-top:.4rem;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#f47b20;font-weight:700}

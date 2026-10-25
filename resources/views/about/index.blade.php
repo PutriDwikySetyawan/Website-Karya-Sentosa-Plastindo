@@ -17,9 +17,10 @@
                      onerror="this.style.minHeight='320px';this.style.background='#cfd8e3'">
             </div>
             <div class="col-lg-6">
-                <x-section-title title="Kemasan plastik untuk kebutuhan industri" />
-                <p class="text-muted">PT Karya Sentosa Plastindo adalah perusahaan manufaktur terkemuka di Pandaan, Pasuruan, Jawa Timur yang berspesialisasi dalam memproduksi kemasan plastik HDPE berkualitas seperti jerigen, drum, dan botol industri.
-Didukung teknologi mesin injection dan blow moulding terkini serta sertifikasi ISO 9001:2015, kami menjamin kemasan yang kuat dan aman untuk menjaga integritas produk Anda. Kami selalu membuka ruang diskusi yang transparan sejak awal agar setiap spesifikasi kemasan yang Anda butuhkan dapat terwujud dengan presisi.</p>
+                <x-section-title title="Profil Perusahaan" />
+                <p class="text-muted">
+Karya Sentosa Manufactured Packaging merupakan perusahaan manufaktur kemasan plastik yang berdiri sejak tahun 2012 dan berpusat di Pandaan, Pasuruan, Jawa Timur. Kami memproduksi kemasan plastik berkualitas tinggi menggunakan bahan baku HDPE yang aman dan sesuai untuk berbagai kebutuhan industri.
+Produk kami telah dipasarkan ke seluruh Indonesia dan digunakan oleh berbagai perusahaan. Dengan mengutamakan kualitas produk, pengawasan teknis, serta kepatuhan terhadap perizinan industri, kami berkomitmen menyediakan produk dan layanan terbaik serta menjalin kerja sama yang positif dengan berbagai sektor industri, baik skala kecil, menengah, maupun besar.</p>
         </div>
 
        <div class="row g-4 mt-4">

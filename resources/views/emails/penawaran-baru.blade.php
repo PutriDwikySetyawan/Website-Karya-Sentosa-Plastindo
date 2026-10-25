@@ -63,9 +63,9 @@
                 @endif
                 @if($nomor !== '')
                     <a href="https://wa.me/{{ $nomor }}?text={{ urlencode('Halo ' . ($contact->name ?? '') . ', terima kasih telah menghubungi ' . config('company.name') . '.') }}"
-                       style="display:inline-block;background:#f47b20;color:#ffffff;text-decoration:none;padding:10px 18px;font-size:13px;font-weight:bold">
-                        Balas via WhatsApp
-                    </a>
+   style="display:inline-block;background:#f47b20;color:#ffffff;text-decoration:none;padding:10px 18px;font-size:13px;font-weight:bold">
+    Balas via WhatsApp
+</a>
                 @endif
             </p>
 
