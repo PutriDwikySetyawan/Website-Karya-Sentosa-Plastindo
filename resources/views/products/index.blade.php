@@ -60,7 +60,7 @@
 <section class="page-header">
     <div class="container">
         <span class="eyebrow">Katalog Produk</span>
-        <h1>Jerrycan, Botol PET &amp; Drum Plastik</h1>
+        <h1>Drum, Jerrycan, &amp; Tutup Jerrycan</h1>
     </div>
 </section>
 

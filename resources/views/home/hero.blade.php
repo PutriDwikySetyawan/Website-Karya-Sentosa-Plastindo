@@ -4,7 +4,7 @@
             <div class="col-lg-6">
                 <span class="eyebrow eyebrow-bar">Produsen Kemasan Plastik Industri</span>
                 <h1>Solusi Kemasan Plastik Industri yang Andal</h1>
-                <p class="hero-text">PT Karya Sentosa Plastindo memproduksi jerigen dan drum plastik untuk mendukung kebutuhan kemasan industri Anda.</p>
+                <p class="hero-text">PT Karya Sentosa Plastindo memproduksi jerrycan, tutup jerrycan, serta drum plastik untuk mendukung kebutuhan kemasan industri Anda.</p>
                 <div class="d-flex flex-wrap gap-2">
                     <a href="{{ route('contact') }}#minta-penawaran" class="btn btn-orange">Konsultasi Produk</a>
                     <a href="{{ route('products.index') }}" class="btn btn-outline-light-sq">Lihat Produk</a>
@@ -14,10 +14,10 @@
                <div class="hero-photo">
                     {{-- Video hero: muted + playsinline wajib supaya autoplay jalan di browser dan HP --}}
                     <video class="hero-video" autoplay muted loop playsinline preload="auto"
-                        aria-label="Kemasan untuk alur kerja industri Anda">
+                        aria-label=" alur kerja industri Anda">
                         <source src="{{ asset('assets/videos/hero.mp4') }}" type="video/mp4">
                     </video>
-                    <span class="hero-caption">Kemasan untuk alur kerja industri Anda</span>
+                    <span class="hero-caption">PT Karya Sentosa Plastindo</span>
                 </div>
             </div>
         </div>

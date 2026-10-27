@@ -19,8 +19,7 @@
             <div class="col-lg-6">
                 <x-section-title title="Profil Perusahaan" />
                 <p class="text-muted">
-Karya Sentosa Manufactured Packaging merupakan perusahaan manufaktur kemasan plastik yang berdiri sejak tahun 2012 dan berpusat di Pandaan, Pasuruan, Jawa Timur. Kami memproduksi kemasan plastik berkualitas tinggi menggunakan bahan baku HDPE yang aman dan sesuai untuk berbagai kebutuhan industri.
-Produk kami telah dipasarkan ke seluruh Indonesia dan digunakan oleh berbagai perusahaan. Dengan mengutamakan kualitas produk, pengawasan teknis, serta kepatuhan terhadap perizinan industri, kami berkomitmen menyediakan produk dan layanan terbaik serta menjalin kerja sama yang positif dengan berbagai sektor industri, baik skala kecil, menengah, maupun besar.</p>
+KARYA SENTOSA MANUFACTURED PACKAGING merupakan produsen produk plastik. Berdiri sejak tahun 1997. Didukung mesin berteknologi tinggi dan tenaga profesional yang berpengalaman sehingga menghasilkan produk berkualitas. Telah melewati Pengawasan secara teknis & administrasi dan Izin Produk Industri dari Pemerintah. Produk kami terjual dengan baik di seluruh Indonesia. Kami juga menyediakan produk dan layanan berkualitas tinggi, baik dari domestik kecil dan menengah.</p>
         </div>
 
        <div class="row g-4 mt-4">
