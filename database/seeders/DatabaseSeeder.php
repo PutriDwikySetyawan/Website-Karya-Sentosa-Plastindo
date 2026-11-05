@@ -21,10 +21,10 @@ class DatabaseSeeder extends Seeder
         // ukuran   = angka liter dipisah koma, dipakai filter ukuran
         $products = [
             // ===== DRUM =====
-            ['Drum Open Top 200L, 150L, 120L, 60L', 'drum-open-top-200l-150l-120l-60l', 'drum', 'DRUM',
+            ['Drum Open Top 200L, 150L, 120L, 80L, 60L ', 'drum-open-top-200l-150l-120l-60l', 'drum', 'DRUM',
              "Drum plastik dengan bukaan atas untuk kebutuhan penanganan dan penyimpanan industri. $warna",
-             'Ukuran tersedia: 60, 120, 150, dan 200 liter · Warna bisa custom', 'drum-open-top.jpg',
-             'drum-open-top', '60,120,150,200'],
+             'Ukuran tersedia: 60, 120, 150, 80, dan 200 liter · Warna bisa custom', 'drum-open-top.jpg',
+             'drum-open-top', '60,120,150,80,200'],
 
             ['Drum Double Ring 200L', 'drum-double-ring-200l', 'drum', 'DRUM',
              "Drum plastik double ring untuk menunjang kebutuhan pengadaan dan distribusi industri. $warna",
